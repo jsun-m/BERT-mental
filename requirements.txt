@@ -1,0 +1,9 @@
+numpy
+pandas 
+torch 
+scikit-learn 
+transformers
+datasets
+evaluate
+pynvml
+beam-sdk
