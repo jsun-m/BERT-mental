@@ -3,7 +3,7 @@ import json
 
 # url = "https://beam.slai.io/wy7re"
 url = "https://beam.slai.io/6vfl3"
-auth = "Basic XXXXXXXXXXXXXX"
+auth = "Basic ZjY1YWYyYWZhYzVkNDU5YmYyMjJiNThkNGY0MTk5NDc6NzNiNTk4M2E3Y2RiM2Y4NWQ1ODljZjM4YzRhZTRmZjc"
 
 models = [
     # "nlpie/tiny-clinicalbert",
@@ -26,7 +26,7 @@ for model in models:
   headers = {
     "Accept": "*/*",
     "Accept-Encoding": "gzip, deflate",
-    "Authorization": auth,
+    "Authorization": "Basic XXXXXXXXXXXXXX",
     "Connection": "keep-alive",
     "Content-Type": "application/json"
   }
