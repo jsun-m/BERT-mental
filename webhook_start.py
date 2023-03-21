@@ -25,7 +25,7 @@ for model in models:
   headers = {
     "Accept": "*/*",
     "Accept-Encoding": "gzip, deflate",
-    "Authorization": "Basic ZjY1YWYyYWZhYzVkNDU5YmYyMjJiNThkNGY0MTk5NDc6NzNiNTk4M2E3Y2RiM2Y4NWQ1ODljZjM4YzRhZTRmZjc=",
+    "Authorization": "Basic XXXXXXXXXXXXXX",
     "Connection": "keep-alive",
     "Content-Type": "application/json"
   }
