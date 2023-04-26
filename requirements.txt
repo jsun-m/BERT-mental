@@ -7,3 +7,6 @@ datasets
 evaluate
 pynvml
 beam-sdk
+jax
+https://storage.googleapis.com/jax-releases/cuda11/jaxlib-0.4.7+cuda11.cudnn86-cp38-cp38-manylinux2014_x86_64.whl
+flax

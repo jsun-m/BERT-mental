@@ -55,19 +55,19 @@ def load_data(dataset_name: str = "eRisk",  model_name: str = "nlpie/bio-mobileb
     tokenizer = AutoTokenizer.from_pretrained(
         model_name,
         use_auth_token=HUGGINGFACE_ACCESS_TOKEN,
-        model_max_length=512,
+        model_max_length=128,
         # cache_dir=VOLUME_CACHE_DIR
     )
     
     tokenized_datasets_train = dataset_hf_train.map(
         tokenize_function(tokenizer), 
         batched=True,
-        cache_file_name=f"{VOLUME_CACHE_DIR}/{dataset_name}_train_cache.cache"
+        # cache_file_name=f"{VOLUME_CACHE_DIR}/{dataset_name}_train_cache.cache"
     )
     tokenized_datasets_test = dataset_hf_test.map(
         tokenize_function(tokenizer), 
         batched=True, 
-        cache_file_name=f"{VOLUME_CACHE_DIR}/{dataset_name}_test_cache.cache"
+        # cache_file_name=f"{VOLUME_CACHE_DIR}/{dataset_name}_test_cache.cache"
     )
 
     return tokenized_datasets_train, tokenized_datasets_test

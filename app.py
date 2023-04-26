@@ -23,6 +23,7 @@ app.Trigger.Webhook(
         "model_name": beam.Types.String(required=False),
         "dataset": beam.Types.String(required=False),
         "label_count": beam.Types.Float(required=False),
+        "batch_size": beam.Types.Float(required=False),
     },
     handler="run.py:train"
 )

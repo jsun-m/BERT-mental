@@ -1,38 +1,45 @@
 import requests
 import json
 
-# url = "https://beam.slai.io/wy7re"
-url = "https://beam.slai.io/6vfl3"
-auth = "Basic XXXXXXXXXXXXXX"
+url = "https://beam.slai.io/wz69m" # REPLACE WITH YOUR WEBHOOK URL
+
 
 models = [
-    # "nlpie/tiny-clinicalbert",
-    # "nlpie/tiny-biobert",
-    # "nlpie/clinical-mobilebert",
-    # "nlpie/bio-mobilebert",
-    # "mnaylor/psychbert-cased",
-    "mental/mental-bert-base-uncased",
-    "mental/mental-roberta-base",
+  "nlpie/tiny-biobert",
+  "nlpie/tiny-clinicalbert",
+  "nlpie/clinical-mobilebert",
+  "nlpie/bio-mobilebert",
+  "mnaylor/psychbert-cased",
+  "mental/mental-bert-base-uncased",
+  "mental/mental-roberta-base",
+  "smallbenchnlp/roberta-small"
 ]
 
-for model in models:
-  payload = {
-      "dataset": "huggingface_reddit",
+datasets = [
+  {
+    "dataset": "redditMH",
+    "label_count": 2,
+    "batch_size": 8,
+  }
+]
+
+for dataset in datasets:
+  for model in models:
+    payload = {
+      **dataset,
       "model_name": model,
-      "label_count": 5,
-      "batch_size": 4,
-  }
+    }
 
-  headers = {
-    "Accept": "*/*",
-    "Accept-Encoding": "gzip, deflate",
-    "Authorization": auth,
-    "Connection": "keep-alive",
-    "Content-Type": "application/json"
-  }
+    headers = {
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate",
+      "Authorization": "Basic YOUR_API_TOKEN", # REPLACE WITH YOUR BEAM API TOKEN
+      "Connection": "keep-alive",
+      "Content-Type": "application/json"
+    }
 
-  response = requests.request(
-      "POST", url, headers=headers, data=json.dumps(payload)
-  )
+    response = requests.request(
+        "POST", url, headers=headers, data=json.dumps(payload)
+    )
 
-  print(payload)
+    print(response.content)
